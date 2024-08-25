@@ -1,22 +1,28 @@
 body {
-    background-color: #f3f4ed; 
-    font-family: Arial, sans-serif;
-    color: #4a4a4a; 
+    background-color: #f3f4ed;
+    font-family: 'Arial', sans-serif;
+    color: #4a4a4a;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 450px;
+    margin: 5% auto;
     padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-    color: #2c2c2c;
+    color: #2c3e50;
     text-align: center;
+    margin-bottom: 30px;
 }
 
-form {
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: #ffffff; 
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+.form-group {
+    margin-bottom: 20px;
 }
 
 label {
@@ -27,20 +33,20 @@ label {
 }
 
 input[type="number"], select {
-    width: 100%;
+    width: calc(100% - 22px); /* Adjusted width to prevent touching edges */
     padding: 10px;
-    margin-bottom: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
-    background-color: #f9f9f9; 
+    background-color: #f9f9f9;
     font-size: 16px;
+    box-sizing: border-box; /* Ensures padding is included in the width */
 }
 
 button[type="submit"] {
-    background-color: rgba(76, 175, 80, 0.2); 
-    color: #4caf50; 
+    background-color: #4caf50;
+    color: #ffffff;
     padding: 12px 20px;
-    border: 2px solid #4caf50; 
+    border: none;
     border-radius: 8px;
     cursor: pointer;
     width: 100%;
@@ -49,12 +55,28 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: rgba(76, 175, 80, 0.4); 
+    background-color: #45a049;
 }
 
 h2 {
     text-align: center;
-    color: #2c3e50; 
+    color: #2c3e50;
     margin-top: 20px;
 }
 
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        margin: 10% 5%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    button[type="submit"] {
+        font-size: 16px;
+        padding: 10px 15px;
+    }
+}

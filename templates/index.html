@@ -7,53 +7,67 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Predict Health Price</h1>
-    <form method="POST" action="/predict">
-        <label for="age">Age:</label>
-        <input type="number" id="age" name="age" required><br><br>
+    <div class="container">
+        <h1>Predict Health Price</h1>
+        <form method="POST" action="/predict">
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required>
+            </div>
 
-        <label for="sex">Sex:</label>
-        <select id="sex" name="sex">
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-        </select><br><br>
+            <div class="form-group">
+                <label for="sex">Sex:</label>
+                <select id="sex" name="sex">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
 
-        <label for="bmi">BMI:</label>
-        <input type="number" id="bmi" name="bmi" step="any" required><br><br>
+            <div class="form-group">
+                <label for="bmi">BMI:</label>
+                <input type="number" id="bmi" name="bmi" step="any" required>
+            </div>
 
-        <label for="children">Number of Children:</label>
-        <input type="number" id="children" name="children" required><br><br>
-        
-        
-        <label for="Region">Region:</label>
-        <select id="region" name="region">
-            <option value="northeast">Northeast</option>
-            <option value="northwest">Northwest</option>'
-            <option value="northeast">Southeasteast</option>
-            <option value="northwest">Southwest</option>
-        </select><br><br>
-        
+            <div class="form-group">
+                <label for="children">Number of Children:</label>
+                <input type="number" id="children" name="children" required>
+            </div>
 
-        <label for="smoker">Smoker:</label>
-        <select id="smoker" name="smoker">
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-        </select><br><br>
+            <div class="form-group">
+                <label for="region">Region:</label>
+                <select id="region" name="region">
+                    <option value="northeast">Northeast</option>
+                    <option value="northwest">Northwest</option>
+                    <option value="southeast">Southeast</option>
+                    <option value="southwest">Southwest</option>
+                </select>
+            </div>
 
-        <label for="model">Select Model:</label>
-        <select id="model" name="model">
-            <option value="Linear Regression">Linear Regression</option>
-            <option value="K-Nearest Neighbors">K-Nearest Neighbors</option>
-            <option value="Decision Tree">Decision Tree</option>
-            <option value="Random Forest">Random Forest</option>
-            <option value="Gradient Boosting">Gradient Boosting</option>
-        </select><br><br>
+            <div class="form-group">
+                <label for="smoker">Smoker:</label>
+                <select id="smoker" name="smoker">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
 
-        <button type="submit">Predict</button>
-    </form>
+            <div class="form-group">
+                <label for="model">Select Model:</label>
+                <select id="model" name="model">
+                    <option value="Linear Regression">Linear Regression</option>
+                    <option value="K-Nearest Neighbors">K-Nearest Neighbors</option>
+                    <option value="Decision Tree">Decision Tree</option>
+                    <option value="Random Forest">Random Forest</option>
+                    <option value="Gradient Boosting">Gradient Boosting</option>
+                </select>
+            </div>
 
-    {% if prediction_text %}
-    <h2>{{ prediction_text }}</h2>
-    {% endif %}
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if prediction_text %}
+        <h2>{{ prediction_text }}</h2>
+        {% endif %}
+    </div>
 </body>
 </html>
